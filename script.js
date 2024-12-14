@@ -163,13 +163,15 @@ function mostrarCarrito (carrito) {
     carritoHTML.innerHTML = "";
     carrito.forEach(({ nombre, precioUnitario, unidades, subtotal, id }) => {
         let fila = document.createElement("div");
+        fila.className = "tarjetaCarrito";
+        fila.id = "tca" + id;
         fila.innerHTML = `
             <p id=carro>${nombre}</p>
             <p id=carro>$${precioUnitario}</p>
             <div class=unidades>
-            <button id=run${id}> - </button> 
-            <p id=carro>${unidades}</p>
-            <button id=sun${id}> + </button>
+                <button id=run${id}> - </button> 
+                <p id=carro>${unidades}</p>
+                <button id=sun${id}> + </button>
             </div>
             <p id=carro>$${subtotal}</p>
             <p><button class=eliminarProducto id=eli${id}>Eliminar</button></p>
