@@ -115,7 +115,7 @@ function generarProductos (productos) {
             <h3>${nombre}</h3>
             <p>Precio: $${precio}</p>
             <p>Stock: ${stock}</p>
-            <button class=agregarAlCarrito id="agc${id}">Agregar al carrito</button>
+            <button class=agregarAlCarrito id=agc${id}>Agregar al carrito</button>
             </article>
             `
 
@@ -167,12 +167,12 @@ function mostrarCarrito (carrito) {
             <p id=carro>${nombre}</p>
             <p id=carro>$${precioUnitario}</p>
             <div class=unidades>
-            <button id="run${id}"> - </button> 
+            <button id=run${id}> - </button> 
             <p id=carro>${unidades}</p>
-            <button id="sun${id}"> + </button>
+            <button id=sun${id}> + </button>
             </div>
             <p id=carro>$${subtotal}</p>
-            <p><button class=eliminarProducto id="eli${id}">Eliminar</button></p>
+            <p><button class=eliminarProducto id=eli${id}>Eliminar</button></p>
             `;
             
             carritoHTML.append(fila);

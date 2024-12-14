@@ -102,52 +102,6 @@ header
     }
 }
 
-#run
-{
-    margin-top: 30px;
-    width: 80px;
-    height: 35px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient(to right, #03f82c6e, #04e2ff);
-    color: black;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.15s linear;
-
-    &:hover
-    {
-        color: white;
-        width: 85px;
-        height: 40px;
-        font-weight: bold;
-    }
-}
-
-#sun
-{
-    margin-top: 30px;
-    width: 80px;
-    height: 35px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient(to right, #03f82c6e, #04e2ff);
-    color: black;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.15s linear;
-
-    &:hover
-    {
-        color: white;
-        width: 85px;
-        height: 40px;
-        font-weight: bold;
-    }
-}
-
 .agregarAlCarrito
 {
     margin-top: 30px;
