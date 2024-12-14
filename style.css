@@ -274,7 +274,6 @@ article
     border-radius: 1rem;
 }
 
-
 h1
 {
     text-align: center;
@@ -284,13 +283,18 @@ h1
 #carrito
 {
     margin-top: 40px;
-    border: 2px solid black;
+    border: 2px solid white;
     width: 100%;
     min-height: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+}
+
+#carro
+{
+    color: white;
 }
 
 .tarjetaCarrito
