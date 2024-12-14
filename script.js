@@ -105,20 +105,19 @@ function ocultarCarrito (e) {
 
 function generarProductos (productos) {
     let contenedor = document.getElementById("contenedor");
-    contenedor.innerHTML = ""; 
+    contenedor.innerHTML = "";
     productos.forEach(({ image, nombre, precio, stock, id }) => {
         let card = document.createElement("div");
         card.className = "card";
         card.innerHTML = `
             <article>
-            <img src="${image}" alt="${nombre}">
+            <img src=${image} alt=${nombre}>
             <h3>${nombre}</h3>
             <p>Precio: $${precio}</p>
             <p>Stock: ${stock}</p>
-            </p>
             <button class=agregarAlCarrito id="agc${id}">Agregar al carrito</button>
             </article>
-            `;
+            `
 
         contenedor.append(card);
     });
