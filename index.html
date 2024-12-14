@@ -14,29 +14,29 @@
     </header>
 
 
+    <div id="filtros">
+        <div>
+            <input id="buscar" placeholder="Buscar productos">
+            <button id="botonBuscar"> Buscar </button>
+            <button id="productosCarrito">Carrito</button>
+        </div>
+        
+        <select name="electrodomesticos" id="compraProductos">
+            <option value=""> Todos </option>
+            <option value="accesorios" id="accesorios"> Accesorios </option>
+            <option value="reproductores" id="reproductores"> Reproductores </option>
+            <option value="celulares" id="celulares"> Celulares </option>
+            <option value="computacion" id="computacion"> Computación </option>
+        </select>
+    </div>
+    
+    
     <div id="pantallaProductos">
-        <div id="filtros">
-            <div>
-                <input id="buscar" placeholder="Buscar productos">
-                <button id="botonBuscar"> Buscar </button>
-                <button id="productosCarrito">Carrito</button>
-            </div>
-
-            <select name="electrodomesticos" id="compraProductos">
-                <option value=""> Todos </option>
-                <option value="accesorios" id="accesorios"> Accesorios </option>
-                <option value="reproductores" id="reproductores"> Reproductores </option>
-                <option value="celulares" id="celulares"> Celulares </option>
-                <option value="computacion" id="computacion"> Computación </option>
-            </select>
+        <div id="contenedor">
+            <div class="productos"></div>
         </div>
     </div>
-
-
-    <div id="contenedor">
-        <div class="productos"></div>
-    </div>
-
+        
     <div class="ocultar" id="pantallaCarrito">
         <div id="carrito"></div>
         <button id="botonComprar"> Comprar </button>
