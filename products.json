@@ -1,0 +1,90 @@
+[
+    {
+        "id": 1,
+        "nombre": "Notebook Gamer ASUS",
+        "precio": 1799,
+        "stock": 10,
+        "categoria": "computacion",
+        "image": "img/notebookasus.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Mouse Logitech",
+        "precio": 69,
+        "stock": 20,
+        "categoria": "accesorios",
+        "image": "img/mouselogitech.jpg"
+    },
+    {
+        "id": 3,
+        "nombre": "Teclado ASUS",
+        "precio": 129,
+        "stock": 5,
+        "categoria": "accesorios",
+        "image": "img/tecladoasus.jpg"
+    },
+    {
+        "id": 4,
+        "nombre": "Monitor 27' Samsung",
+        "precio": 1299,
+        "stock": 8,
+        "categoria": "computacion",
+        "image": "img/monitorsamsung.jpg"
+    },
+    {
+        "id": 5,
+        "nombre": "Headset Oculus Rift",
+        "precio": 499,
+        "stock": 15,
+        "categoria": "reproductores",
+        "image": "img/headset.jpg"
+    },
+    {
+        "id": 6,
+        "nombre": "Smartphone Samsung Galaxy",
+        "precio": 899,
+        "stock": 12,
+        "categoria": "celulares",
+        "image": "img/samsunggalaxy.jpg"
+    },
+    {
+        "id": 7,
+        "nombre": "Smartwatch Apple Watch",
+        "precio": 249,
+        "stock": 25,
+        "categoria": "reproductores",
+        "image": "img/AppleWatch.jpg"
+    },
+    {
+        "id": 8,
+        "nombre": "Disco SSD 1TB",
+        "precio": 149,
+        "stock": 15,
+        "categoria": "accesorios",
+        "image": "img/discoSSD.jpg"
+    },
+    {
+        "id": 9,
+        "nombre": "Adaptador USB Type-C",
+        "precio": 39,
+        "stock": 30,
+        "categoria": "accesorios",
+        "image": "img/USB.jpg"
+    },
+    {
+        "id": 10,
+        "nombre": "Camara IP",
+        "precio": 199,
+        "stock": 20,
+        "categoria": "reproductores",
+        "image": "img/camaraIP.png"
+    },
+    {
+        "id": 11,
+        "nombre": "Iphone 15 Pro Max",
+        "precio": 1369,
+        "stock": 12,
+        "categoria": "celulares",
+        "image": "img/iphone15promax.jpg"
+    }
+    ]
