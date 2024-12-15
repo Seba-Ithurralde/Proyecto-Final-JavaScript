@@ -246,6 +246,11 @@ h1
     align-items: center;
 }
 
+#centro
+{
+    text-align: center;
+}
+
 #carro
 {
     color: white;
