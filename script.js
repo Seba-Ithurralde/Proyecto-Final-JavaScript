@@ -249,3 +249,10 @@ function eliminarProducto(e) {
     const total = calcularTotal(carrito);
     actualizarTotal(total);
 }
+
+function sweetAlert (icon, text, icon) {
+    Swal.fire ({
+        icon,
+        text,
+    });
+}
