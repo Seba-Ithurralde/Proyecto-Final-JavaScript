@@ -180,8 +180,8 @@ function mostrarCarrito (carrito) {
             
             carritoHTML.append(fila);
 
-            let botonEliminar = document.getElementById("eli" + id);
-            botonEliminar.addEventListener("click", eliminarProducto);
+            let eliminar = document.getElementById("eli" + id);
+            eliminar.addEventListener("click", eliminarProducto);
             
             let restar = document.getElementById("run" + id);
             restar.addEventListener("click", restarUnidad);
