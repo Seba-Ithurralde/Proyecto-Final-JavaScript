@@ -84,9 +84,9 @@ function botonProductos (e, productos) {
     if (e.keyCode === 13) {
         let productosFiltrados = filtrar(e.target.value, productos);
         generarProductos(productosFiltrados);
+        e.target.value === "" && generarProductos(productos);
 }
 
-    e.target.value === "" && generarProductos(productos);
 }
 
 function filtrar (valor, productos) {
@@ -166,11 +166,10 @@ function mostrarCarrito (carrito) {
     carrito.forEach(({ nombre, precioUnitario, unidades, subtotal, id }) => {
         let fila = document.createElement("div");
         fila.className = "tarjetaCarrito";
-        fila.id = "tca" + id;
         fila.innerHTML = `
             <p id=carro>${nombre}</p>
             <p id=carro>$${precioUnitario}</p>
-            <div class=unidades>
+            <div id=unidades>
                 <button id=run${id}> - </button> 
                 <p id=carro>${unidades}</p>
                 <button id=sun${id}> + </button>

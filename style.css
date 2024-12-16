@@ -145,49 +145,30 @@ header
 
 #accesorios
 {
-    margin-top: 30px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient(to right, #03f82c6e, #04e2ff);
-    color: black;
-    cursor: pointer;
+
     font-weight: bold;
 }
 
 #reproductores
 {
-    margin-top: 30px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient(to right, #03f82c6e, #04e2ff);
-    color: black;
-    cursor: pointer;
+
+    font-weight: bold;
+}
+
+#todos
+{
     font-weight: bold;
 }
 
 #computacion
 {
-    margin-top: 30px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient(to right, #03f82c6e, #04e2ff);
-    color: black;
-    cursor: pointer;
+
     font-weight: bold;
 }
 
 #celulares
 {
-    margin-top: 30px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background-image: linear-gradient(to right, #03f82c6e, #04e2ff);
-    color: black;
-    cursor: pointer;
+
     font-weight: bold;
 }
 
@@ -269,7 +250,7 @@ h1
     display: none;
 }
 
-.unidades 
+#unidades 
 {
     display: flex;
 }
