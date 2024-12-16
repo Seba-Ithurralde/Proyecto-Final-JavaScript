@@ -171,9 +171,9 @@ function mostrarCarrito (carrito) {
             <p id=carro>${nombre}</p>
             <p id=carro>$${precioUnitario}</p>
             <div id=unidades>
-                <button id=run${id}> - </button> 
+                <button id=run${id}> ➖ </button> 
                 <p id=carro>${unidades}</p>
-                <button id=sun${id}> + </button>
+                <button id=sun${id}> ➕ </button>
             </div>
             <p id=carro>$${subtotal}</p>
             <p><button class=eliminarProducto id=eli${id}>Eliminar</button></p>
