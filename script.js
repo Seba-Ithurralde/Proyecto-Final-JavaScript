@@ -58,7 +58,7 @@ function vaciarCarrito() {
 
 function actualizarTotal(total) {
     let elementoTotal = document.getElementById("total");
-    elementoTotal.innerText = "Total de la compra: $" + total
+    elementoTotal.innerText = "Total de la compra: $" + total;
 }
 
 function comprarProductos () {
@@ -166,6 +166,7 @@ function mostrarCarrito (carrito) {
     carrito.forEach(({ nombre, precioUnitario, unidades, subtotal, id }) => {
         let fila = document.createElement("div");
         fila.className = "tarjetaCarrito";
+        fila.id = "tca" + id;
         fila.innerHTML = `
             <p id=carro>${nombre}</p>
             <p id=carro>$${precioUnitario}</p>
