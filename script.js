@@ -129,22 +129,19 @@ function agregarCarrito (e, productos) {
     let indiceCarrito = carrito.findIndex(({ id }) => id === idProducto);
     if (indiceCarrito === -1) {
         carrito.push({
-            id: id,
-            nombre: nombre,
+            id,
+            nombre,
             precioUnitario: precio,
             unidades: 1,
             subtotal: precio
-        });
-    
+        })
     } else {
         carrito[indiceCarrito].unidades++;
-        carrito[indiceCarrito].subtotal = carrito[indiceCarrito].unidades * carrito[indiceCarrito].precioUnitario;
+        carrito[indiceCarrito].subtotal = carrito[indiceCarrito].precioUnitario * carrito[indiceCarrito].unidades;
     }
 
     guardarCarrito(carrito);
     mostrarCarrito(carrito);
-    const total = calcularTotal(carrito);
-    actualizarTotal(total);
 
     Toastify({
         text: `Se agregó ${nombre} al carrito`,
@@ -195,13 +192,18 @@ function restarUnidad (e) {
     let id = Number(e.target.id.substring(3));
     let carrito = recuperarCarrito();
     let indiceCarrito = carrito.findIndex(producto => producto.id === id);
-    if (indiceCarrito !== -1 && indiceCarrito > 1) {
+    if (indiceCarrito !== -1) {
         carrito[indiceCarrito].unidades--;
-        carrito[indiceCarrito].subtotal = carrito[indiceCarrito].unidades * carrito[indiceCarrito].precioUnitario;
-        guardarCarrito(carrito);
+        if (carrito[indiceCarrito].unidades === 0) {
+            carrito.splice(indiceCarrito, 1);
+            e.target.parentElement.parentElement.remove();
+        } else {
+            carrito[indiceCarrito].subtotal = carrito[indiceCarrito].precioUnitario * carrito[indiceCarrito].unidades;
 
-        e.target.parentElement.children[1].innerText = carrito[indiceCarrito].unidades;
-        e.target.parentElement.nextElementSibling.innerText = carrito[indiceCarrito].subtotal;
+            e.target.parentElement.children[1].innerText = carrito[indiceCarrito].unidades;
+            e.target.parentElement.nextElementSibling.innerText = carrito[indiceCarrito].subtotal;
+        }
+        guardarCarrito(carrito);
     }
 
     const total = calcularTotal(carrito);
@@ -225,9 +227,9 @@ function sumarUnidad (e) {
     actualizarTotal(total);
 }   
 
-function guardarCarrito (clave, valor) {
+function guardarCarrito (valor) {
     let valorProducto = JSON.stringify(valor);
-    localStorage.setItem(clave, valorProducto); 
+    localStorage.setItem("carrito", valorProducto); 
 }
 
 function recuperarCarrito () {
@@ -235,10 +237,10 @@ function recuperarCarrito () {
 }
 
 function eliminarProducto(e) {
-    let carrito = recuperarCarrito();
     let id = Number(e.target.id.substring(3));
+    let carrito = recuperarCarrito();
     let indiceCarrito = carrito.findIndex(producto => producto.id === id);
-    if (indiceCarrito!== -1) {
+    if (indiceCarrito !== -1) {
         carrito.splice(indiceCarrito, 1);
         e.target.parentElement.remove();
     }
