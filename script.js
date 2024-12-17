@@ -1,50 +1,48 @@
-let productos = [];
-let carrito = [];
+mostrarProductos();
 
+function mostrarProductos() {
 fetch("./products.json")
-    .then(response => response.json())
-    .then(productos => principal(productos))
-    .catch(error => sweetAlert(error, "Hubo un error al intentar mostrar los productos", "error"));
+.then(response => response.json())
+.then(productos => principal(productos))
+.catch(error => sweetAlert(error, "Hubo un error al intentar mostrar los productos", "error"));
+}
 
 function principal (productos) {
-
+    
     let carrito = recuperarCarrito("carrito");
     mostrarCarrito(carrito);
-
+    
     generarProductos(productos);
-
+    
     let  inputBuscar= document.getElementById("buscar");
     inputBuscar.addEventListener("keyup", (e) => buscarProductos(e, productos));
-
+    
     let botonBuscar = document.getElementById("botonBuscar");
     botonBuscar.addEventListener("click", () => botonProductos(inputBuscar, productos));
-
+    
     let botonProductosCarrito = document.getElementById("productosCarrito");
     botonProductosCarrito.addEventListener("click", ocultarCarrito)
-
+    
     let botonProducts = document.getElementsByClassName("agregarAlCarrito");
     for (const boton of botonProducts) {  
         boton.addEventListener("click", (e) => agregarCarrito(e, productos));
     }
-
+    
     let botonComprar = document.getElementById("botonComprar");
     botonComprar.addEventListener("click", () => comprarProductos(carrito, productos));
-
+    
     let vaciar = document.getElementById("carrito");
     vaciar.addEventListener("click", vaciarCarrito);
-
+    
     let compraProductos = document.getElementById("compraProductos");
     compraProductos.addEventListener("change",(e) => buyProducts(e, productos));
 }
-
-principal();
 
 function buyProducts(e, productos) {
     let categoria = e.target.value; 
     let products = productos.filter(producto => producto.categoria.includes(categoria));
     generarProductos(products);
 }
-
 
 function calcularTotal(productos) {
     return productos.reduce((acum, producto) => acum + producto.subtotal, 0);
@@ -84,12 +82,11 @@ function botonProductos (e, productos) {
         let productosFiltrados = filtrar(e.target.value, productos);
         generarProductos(productosFiltrados);
         e.target.value === "" && generarProductos(productos);
-}
-
+    }
 }
 
 function filtrar (valor, productos) {
-    return productos.filter(({ nombre, categoria }) => nombre.includes(valor) || categoria.includes(valor));
+    return productos.filter(({ nombre, categoria }) => (nombre.includes(valor) || categoria.includes(valor)));
 }
 
 function ocultarCarrito (e) {
@@ -103,8 +100,8 @@ function ocultarCarrito (e) {
 }
 
 function generarProductos (productos) {
-    let contenedor = document.getElementById("contenedor");
-    contenedor.innerHTML = "";
+    let container = document.getElementById("contenedor");
+    container.innerHTML = "";
     productos.forEach(({ image, nombre, precio, stock, id }) => {
         let card = document.createElement("div");
         card.className = "card";
@@ -120,7 +117,7 @@ function generarProductos (productos) {
             </article>
             `
 
-        contenedor.appendChild(card);
+            container.appendChild(card);
     });
 }
 
@@ -165,6 +162,7 @@ function mostrarCarrito (carrito) {
     carrito.forEach(({ nombre, precioUnitario, unidades, subtotal, id }) => {
         let fila = document.createElement("div");
         fila.className = "tarjetaCarrito";
+        fila.id = "tca" + id;
         fila.innerHTML = `
             <p id=carro>${nombre}</p>
             <p id=carro>$${precioUnitario}</p>
