@@ -1,11 +1,10 @@
-function pedirProductos() {
-    fetch("./products.json")
+let productos = [];
+let carrito = [];
+
+fetch("./products.json")
     .then(response => response.json())
     .then(productos => principal(productos))
     .catch(error => sweetAlert(error, "Hubo un error al intentar mostrar los productos", "error"));
-}
-
-pedirProductos();
 
 function principal (productos) {
 
@@ -121,7 +120,7 @@ function generarProductos (productos) {
             </article>
             `
 
-        contenedor.append(card);
+        contenedor.appendChild(card);
     });
 }
 
@@ -166,7 +165,6 @@ function mostrarCarrito (carrito) {
     carrito.forEach(({ nombre, precioUnitario, unidades, subtotal, id }) => {
         let fila = document.createElement("div");
         fila.className = "tarjetaCarrito";
-        fila.id = "tca" + id;
         fila.innerHTML = `
             <p id=carro>${nombre}</p>
             <p id=carro>$${precioUnitario}</p>
@@ -179,7 +177,7 @@ function mostrarCarrito (carrito) {
             <p><button class=eliminarProducto id=eli${id}>Eliminar</button></p>
             `;
             
-            carritoHTML.append(fila);
+            carritoHTML.appendChild(fila);
 
             let eliminar = document.getElementById("eli" + id);
             eliminar.addEventListener("click", eliminarProducto);
@@ -231,7 +229,7 @@ function sumarUnidad (e) {
 
 function guardarCarrito (clave, valor) {
     let valorProducto = JSON.stringify(valor);
-    localStorage.setItem(clave, valorProducto);   
+    localStorage.setItem(clave, valorProducto); 
 }
 
 function recuperarCarrito () {

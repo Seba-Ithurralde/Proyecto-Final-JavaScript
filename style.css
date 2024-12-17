@@ -102,6 +102,11 @@ header
     }
 }
 
+#pantallaProductos
+{
+    text-align: center;
+}
+
 .agregarAlCarrito
 {
     margin-top: 30px;
