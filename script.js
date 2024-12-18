@@ -24,7 +24,7 @@ function principal (productos) {
     botonProductosCarrito.addEventListener("click", ocultarCarrito)
     
     let botonProducts = document.getElementsByClassName("agregarAlCarrito");
-    for (const boton of botonProducts) {  
+    for (const boton of botonProducts) {
         boton.addEventListener("click", (e) => agregarCarrito(e, productos));
     }
     
@@ -35,9 +35,7 @@ function principal (productos) {
     vaciar.addEventListener("click", vaciarCarrito);
     
     let compraProductos = document.getElementById("compraProductos");
-    for (const compra of compraProductos) {
-        compra.addEventListener("click", (e) => buyProducts(e, productos));
-    }
+    compraProductos.addEventListener("change", (e) => buyProducts(e, productos));
 }
 
 function buyProducts(e, productos) {
