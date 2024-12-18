@@ -35,12 +35,14 @@ function principal (productos) {
     vaciar.addEventListener("click", vaciarCarrito);
     
     let compraProductos = document.getElementById("compraProductos");
-    compraProductos.addEventListener("change",(e) => buyProducts(e, productos));
+    for (const compra of compraProductos) {
+        compra.addEventListener("click", (e) => buyProducts(e, productos));
+    }
 }
 
 function buyProducts(e, productos) {
-    let categoria = e.target.value; 
-    let products = productos.filter(producto => producto.categoria.includes(categoria));
+    const categoria = e.target.value; 
+    const products = productos.filter(producto => producto.categoria.includes(categoria));
     generarProductos(products);
 }
 
@@ -71,9 +73,8 @@ function comprarProductos () {
       }).showToast();
 }
 
-function buscarProductos (productos) {
-    let inputBuscar = document.getElementById("buscar");
-    let productosFiltrados = filtrar(inputBuscar.value, productos);
+function buscarProductos (input, productos) {
+    let productosFiltrados = filtrar(input.value, productos);
     generarProductos(productosFiltrados);
 }
 
@@ -81,8 +82,8 @@ function botonProductos (e, productos) {
     if (e.keyCode === 13) {
         let productosFiltrados = filtrar(e.target.value, productos);
         generarProductos(productosFiltrados);
-        e.target.value === "" && generarProductos(productos);
     }
+    e.target.value === "" && generarProductos(productos);
 }
 
 function filtrar (valor, productos) {
