@@ -31,9 +31,6 @@ function principal (productos) {
     let botonComprar = document.getElementById("botonComprar");
     botonComprar.addEventListener("click", () => comprarProductos(carrito, productos));
     
-    let vaciar = document.getElementById("carrito");
-    vaciar.addEventListener("click", vaciarCarrito);
-    
     let compraProductos = document.getElementById("compraProductos");
     compraProductos.addEventListener("change", (e) => buyProducts(e, productos));
 }
@@ -46,11 +43,6 @@ function buyProducts(e, productos) {
 
 function calcularTotal(productos) {
     return productos.reduce((acum, producto) => acum + producto.subtotal, 0);
-}
-
-function vaciarCarrito() {
-    let carrito = document.getElementById("carrito");
-    carrito.innerHTML = "";
 }
 
 function actualizarTotal(total) {
@@ -242,13 +234,11 @@ function eliminarProducto(e) {
     actualizarTotal(total);
 }
 
-function sweetAlert (title, text, icon, showDenyButton, confirmButtonText) {
+function sweetAlert (title, text, icon) {
     Swal.fire ({
         icon,
         title,
         text,
-        showDenyButton,
-        confirmButtonText,
     });
 }
 
