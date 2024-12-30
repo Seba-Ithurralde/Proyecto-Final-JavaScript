@@ -1,11 +1,11 @@
-mostrarProductos();
-
 function mostrarProductos() {
 fetch("./products.json")
 .then(response => response.json())
 .then(productos => principal(productos))
 .catch(error => sweetAlert(error, "Hubo un error al intentar mostrar los productos", "error"));
 }
+
+mostrarProductos();
 
 function principal (productos) {
     
@@ -64,17 +64,17 @@ function comprarProductos () {
     sweetAlertPromises("¿Desea finalizar la compra?", "", "question", "Si", "No");
 }
 
-function buscarProductos (input, productos) {
-    let productosFiltrados = filtrar(input.value, productos);
-    generarProductos(productosFiltrados);
-}
-
-function botonProductos (e, productos) {
+function buscarProductos (e, productos) {
     if (e.keyCode === 13) {
         let productosFiltrados = filtrar(e.target.value, productos);
         generarProductos(productosFiltrados);
     }
     e.target.value === "" && generarProductos(productos);
+}
+
+function botonProductos (input, productos) {
+    let productosFiltrados = filtrar(input.value, productos);
+    generarProductos(productosFiltrados);
 }
 
 function filtrar (valor, productos) {
@@ -272,13 +272,14 @@ function sweetAlertPromises (title, text, icon, confirmButtonText, showDenyButto
                         background: "linear-gradient( rgb(255, 82, 82), rgb(110, 77, 143))",
                     }
                 }).showToast();
-            } else if (resultado.isDenied) {
+            } 
+            else if (resultado.isDenied) {
                 Toastify({
                     text: `¡Compra cancelada!`,
                     duration: 3000,
                     style: 
                     {
-                        background: "linear-gradient( rgb(166, 168, 24), rgb(255, 198, 112))",
+                        background: "linear-gradient(to right, rgb(166, 168, 24), rgb(255, 198, 112))",
                     }
                 }).showToast();
             }    
