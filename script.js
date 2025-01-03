@@ -232,6 +232,7 @@ function eliminarProducto(e) {
     guardarCarrito(carrito);
     const total = calcularTotal(carrito);
     actualizarTotal(total);
+    mostrarCarrito(carrito);
 }
 
 function sweetAlert (title, text, icon) {
@@ -259,7 +260,7 @@ function sweetAlertPromises (title, text, icon, confirmButtonText, showDenyButto
                     duration: 3000,
                     style: 
                     {
-                        background: "linear-gradient( rgb(255, 82, 82), rgb(110, 77, 143))",
+                        background: "linear-gradient(to right, rgb(255, 82, 82), rgb(110, 77, 143))",
                     }
                 }).showToast();
             } 
