@@ -85,7 +85,7 @@ function ocultarCarrito (e) {
 function generarProductos (productos) {
     let container = document.getElementById("contenedor");
     container.innerHTML = "";
-    productos.forEach(({ image, nombre, precio, stock, id }) => {
+    productos.forEach(({ image, nombre, precio, id }) => {
         let card = document.createElement("div");
         card.className = "card";
         card.innerHTML = `
@@ -98,7 +98,7 @@ function generarProductos (productos) {
             </div>
             </article>
             `
-            
+
             container.appendChild(card);
     });
 }
