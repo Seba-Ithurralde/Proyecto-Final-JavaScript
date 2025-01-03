@@ -94,12 +94,11 @@ function generarProductos (productos) {
             <div id=centro>
             <h3>${nombre}</h3>
             <p>Precio: $${precio}</p>
-            <p>Stock: ${stock}</p>
             <button class=agregarAlCarrito id=agc${id}>Agregar al carrito</button>
             </div>
             </article>
             `
-
+            
             container.appendChild(card);
     });
 }
