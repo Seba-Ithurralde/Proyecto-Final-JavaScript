@@ -51,7 +51,6 @@ function actualizarTotal(total) {
 }
 
 function comprarProductos () {
-    mostrarCarrito([]);
     localStorage.removeItem("carrito");
     sweetAlertPromises("¿Desea finalizar la compra?", "", "question", "Si", "No");
 }
